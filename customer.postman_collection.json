@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "e5269d3e-715a-46de-abf1-572f29af3294",
+		"name": "Bootcamp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20820771"
+	},
+	"item": [
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "findAllCustomers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/customer/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"customer",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "savePersonalCustomer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dni\": \"87654812\",\r\n    \"name\": \"John\",\r\n    \"surName\": \"Doe\",\r\n    \"address\": \"123 Main St\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/customer/savePersonalCustomer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"customer",
+								"savePersonalCustomer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "saveBusinessCustomer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dni\": \"87654816\",\r\n    \"name\": \"John\",\r\n    \"surName\": \"Doe\",\r\n    \"address\": \"123 Main St\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/customer/saveBusinessCustomer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"customer",
+								"saveBusinessCustomer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findCustomerByDni",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/customer/findByDNI/87654812",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"customer",
+								"findByDNI",
+								"87654812"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCustomerStatus",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dni\": \"87654812\",\r\n    \"status\": \"INACTIVE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/customer/updateCustomerStatus/87654812",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"customer",
+								"updateCustomerStatus",
+								"87654812"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCustomerAddress",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dni\": \"87654812\",\r\n    \"address\": \"742 Evergreen Terrace\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/customer/updateCustomerAddress/87654812",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"customer",
+								"updateCustomerAddress",
+								"87654812"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCustomer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8082/customer/delete/87654812",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"customer",
+								"delete",
+								"87654812"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
