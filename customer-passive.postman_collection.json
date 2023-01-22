@@ -332,7 +332,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"dni\": \"87654816\",\r\n    \"name\": \"John\",\r\n    \"surName\": \"Doe\",\r\n    \"address\": \"123 Main St\"\r\n}",
+							"raw": "{\r\n    \"dni\": \"87654814\",\r\n    \"accountNumber\": \"87654324\",\r\n    \"commissionMaintenance\": 0.00,\r\n    \"commissionTransaction\": 0.00\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -340,7 +340,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8084/currentAccount/saveBusinessCustomer",
+							"raw": "http://localhost:8084/currentAccount/saveBusinessAccount/true",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -348,20 +348,21 @@
 							"port": "8084",
 							"path": [
 								"currentAccount",
-								"saveBusinessCustomer"
+								"saveBusinessAccount",
+								"true"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "updateStatus",
+					"name": "updateAccount",
 					"request": {
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"dni\": \"87654812\",\r\n    \"status\": \"INACTIVE\"\r\n}",
+							"raw": "{\r\n    \"accountNumber\": \"87654324\",\r\n    \"commissionMaintenance\": 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -369,7 +370,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8084/currentAccount/updateCustomerStatus/87654812",
+							"raw": "http://localhost:8084/currentAccount/updateAccount",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -377,45 +378,14 @@
 							"port": "8084",
 							"path": [
 								"currentAccount",
-								"updateCustomerStatus",
-								"87654812"
+								"updateAccount"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "updateCustomerAddress",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"dni\": \"87654812\",\r\n    \"address\": \"742 Evergreen Terrace\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:8084/currentAccount/updateCustomerAddress/87654812",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8084",
-							"path": [
-								"currentAccount",
-								"updateCustomerAddress",
-								"87654812"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "deleteAccount",
+					"name": "delete",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -424,7 +394,7 @@
 							"formdata": []
 						},
 						"url": {
-							"raw": "http://localhost:8084/currentAccount/deleteCurrentAccount/87654812",
+							"raw": "http://localhost:8084/currentAccount/delete/87654321",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -432,8 +402,183 @@
 							"port": "8084",
 							"path": [
 								"currentAccount",
-								"deleteCurrentAccount",
-								"87654812"
+								"delete",
+								"87654321"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Passive - Saving Account",
+			"item": [
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/savingAccount/findAllAccounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"savingAccount",
+								"findAllAccounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByCustomer",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/savingAccount/findByCustomer/87654816",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"savingAccount",
+								"findByCustomer",
+								"87654816"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByAccountNumber",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/savingAccount/findByAccountNumber/87654326",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"savingAccount",
+								"findByAccountNumber",
+								"87654326"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "savePersonalAccount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dni\": \"87654816\",\r\n    \"typeCustomer\": \"BUSINESS\",\r\n    \"accountNumber\": \"87654326\",\r\n    \"limitMovementsMonthly\": 1,\r\n    \"commissionTransaction\": 0.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/savingAccount/savePersonalAccount/true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"savingAccount",
+								"savePersonalAccount",
+								"true"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAccount",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"accountNumber\": \"87654326\",\r\n    \"limitMovementsMonthly\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/savingAccount/updateAccount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"savingAccount",
+								"updateAccount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8084/savingAccount/delete/87654326",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"savingAccount",
+								"delete",
+								"87654326"
 							]
 						}
 					},
