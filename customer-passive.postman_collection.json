@@ -501,7 +501,7 @@
 					"response": []
 				},
 				{
-					"name": "savePersonalAccount",
+					"name": "saveAccount",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -515,7 +515,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8084/savingAccount/savePersonalAccount/true",
+							"raw": "http://localhost:8084/savingAccount/saveAccount/true",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -523,7 +523,7 @@
 							"port": "8084",
 							"path": [
 								"savingAccount",
-								"savePersonalAccount",
+								"saveAccount",
 								"true"
 							]
 						}
@@ -579,6 +579,180 @@
 								"savingAccount",
 								"delete",
 								"87654326"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Passive - Fixed Term",
+			"item": [
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/fixedTerm/findAllAccounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"fixedTerm",
+								"findAllAccounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByCustomer",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/fixedTerm/findByCustomer/87654818",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"fixedTerm",
+								"findByCustomer",
+								"87654818"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByAccountNumber",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/fixedTerm/findByAccountNumber/87654328",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"fixedTerm",
+								"findByAccountNumber",
+								"87654328"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "saveAccount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dni\": \"87654818\",\r\n    \"typeCustomer\": \"BUSINESS\",\r\n    \"accountNumber\": \"87654328\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/fixedTerm/saveAccount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"fixedTerm",
+								"saveAccount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAccount",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"accountNumber\": \"87654328\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/fixedTerm/updateAccount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"fixedTerm",
+								"updateAccount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8084/fixedTerm/delete/87654328",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"fixedTerm",
+								"delete",
+								"87654328"
 							]
 						}
 					},
