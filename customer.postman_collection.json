@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "e5269d3e-715a-46de-abf1-572f29af3294",
+		"name": "Customer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20820771"
+	},
+	"item": [
+		{
+			"name": "findAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/customer/findAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"customer",
+						"findAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findByDni",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/customer/findByDni/87654812",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"customer",
+						"findByDni",
+						"87654812"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "savePersonalCustomer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dni\": \"87654812\",\r\n    \"name\": \"John\",\r\n    \"surName\": \"Doe\",\r\n    \"address\": \"123 Main St\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/customer/savePersonalCustomer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"customer",
+						"savePersonalCustomer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "saveBusinessCustomer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dni\": \"87654816\",\r\n    \"name\": \"John\",\r\n    \"surName\": \"Doe\",\r\n    \"address\": \"123 Main St\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/customer/saveBusinessCustomer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"customer",
+						"saveBusinessCustomer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateStatus",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dni\": \"87654812\",\r\n    \"status\": \"INACTIVE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/customer/updateStatus",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"customer",
+						"updateStatus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateAddress",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dni\": \"87654812\",\r\n    \"address\": \"742 Evergreen Terrace\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/customer/updateAddress",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"customer",
+						"updateAddress"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:9000/customer/delete/87654812",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"customer",
+						"delete",
+						"87654812"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
